@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body, html {
+  margin: 0; 
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #2f2f2f; /* темно-серый фон */
+  overflow-x: hidden;
+  position: relative;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Фон с шариками */
+.background-circles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* чтобы не мешать кликам */
+  overflow: hidden;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 140, 0, 0.5); /* оранжевый с 50% прозрачности */
+  filter: blur(15px);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Разные размеры и анимации для шариков */
+
+.circle1 {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 15%;
+  animation-name: move1;
+  animation-duration: 40s;
+}
+
+.circle2 {
+  width: 180px;
+  height: 180px;
+  top: 40%;
+  left: 70%;
+  animation-name: move2;
+  animation-duration: 50s;
+  background: rgba(255, 165, 0, 0.4);
+}
+
+.circle3 {
+  width: 300px;
+  height: 300px;
+  top: 65%;
+  left: 25%;
+  animation-name: move3;
+  animation-duration: 45s;
+  background: rgba(255, 110, 0, 0.6);
+}
+
+.circle4 {
+  width: 150px;
+  height: 150px;
+  top: 80%;
+  left: 80%;
+  animation-name: move4;
+  animation-duration: 55s;
+  background: rgba(255, 130, 0, 0.45);
+}
+
+@keyframes move1 {
+  0% { transform: translate(0, 0);}
+  50% { transform: translate(30px, -40px);}
+  100% { transform: translate(0, 0);}
+}
+
+@keyframes move2 {
+  0% { transform: translate(0, 0);}
+  50% { transform: translate(-40px, 30px);}
+  100% { transform: translate(0, 0);}
+}
+
+@keyframes move3 {
+  0% { transform: translate(0, 0);}
+  50% { transform: translate(25px, 25px);}
+  100% { transform: translate(0, 0);}
+}
+
+@keyframes move4 {
+  0% { transform: translate(0, 0);}
+  50% { transform: translate(-30px, -20px);}
+  100% { transform: translate(0, 0);}
+}
+
+/* Контент сайта поверх */
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px 20px;
+  text-align: center;
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border-bottom: 2px solid #ff8c00;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  user-select: none;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 10px;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-radius: 0 0 12px 12px;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+}
+
+nav a {
+  padding: 12px 25px;
+  background: rgba(255,140,0,0.15);
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  box-shadow:
+    0 2px 5px rgba(255,140,0,0.4);
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    color 0.3s ease;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  background: #ff8c00;
+  color: #222;
+  box-shadow:
+    0 8px 15px rgba(255,140,0,0.7),
+    inset 0 0 10px 2px #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+section {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 16px;
+  padding: 30px 35px;
+  margin-bottom: 40px;
+  box-shadow:
+    0 10px 25px rgba(255, 140, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+section:hover,
+section:focus-within {
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 40px rgba(255, 140, 0, 0.7);
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffb347;
+  letter-spacing: 1.5px;
+  user-select: none;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+p, ul, ol {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+ul, ol {
+  padding-left: 22px;
+  margin-top: 12px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.button-orange {
+  background: linear-gradient(45deg, #ff7f00, #ffa500);
+  border: none;
+  color: #fff;
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 20px rgba(255,140,0,0.7);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  user-select: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.button-orange:hover,
+.button-orange:focus {
+  background: linear-gradient(45deg, #ffa500, #ffb733);
+  box-shadow:
+    0 8px 30px rgba(255,180,70,0.9);
+  transform: translateY(-4px);
+  outline: none;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 1rem;
+  color: #ddd;
+  border-top: 2px solid #ffb347;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 720px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  main {
+    padding: 0 15px;
+    margin: 40px auto 60px;
+  }
+
+  section {
+    padding: 25px 20px;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  p, ul, ol {
+    font-size: 1rem;
+  }
+
+  .button-orange {
+    padding: 12px 22px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p, ul {
+    font-size: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    flex: 1 1 40%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
+
+  .card {
+    padding: 1rem 1.2rem;
+  }
+
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}

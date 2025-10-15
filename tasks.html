@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>Topshiriqlar – Chatlok</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Немного стилей для форм */
+    form textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    form button {
+      padding: 10px 15px;
+      background-color: #09f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #06c;
+    }
+    .feedback {
+      margin-top: 5px;
+      font-style: italic;
+      color: green;
+    }
+  </style>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const feedback = event.target.querySelector('.feedback');
+      feedback.textContent = "Rahmat! Javobingiz qabul qilindi.";
+      event.target.reset();
+    }
+  </script>
+</head>
+<body>
+
+<div class="background-neon">
+  <div class="neon-ball neon-ball1"></div>
+  <div class="neon-ball neon-ball2"></div>
+  <div class="neon-ball neon-ball3"></div>
+</div>
+
+<div class="container">
+
+  <header class="section">
+    <h1 class="neon-text">Topshiriqlar</h1>
+  </header>
+
+  <nav class="section">
+    <a class="button" href="index.html">Bosh sahifa</a>
+    <a class="button" href="problem.html">Muammo</a>
+    <a class="button" href="examples.html">Namuna</a>
+    <a class="button" href="why.html">Nega kerak?</a>
+    <a class="button" href="tasks.html">Topshiriqlar</a>
+    <a class="button" href="media.html">Video</a>
+    <a class="button" href="conclusion.html">Xulosa</a>
+  </nav>
+
+  <main>
+
+    <section class="card">
+      <h2>1. Noto‘g‘ri gapni to‘g‘ri shaklga keltiring:</h2>
+      <p><em>“Krch, uje chill bo‘ldim, boramizmi?”</em></p>
+      <form onsubmit="handleSubmit(event)">
+        <textarea placeholder="Javobingizni yozing..."></textarea>
+        <button type="submit">Javobni yuborish</button>
+        <div class="feedback"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>2. "Agro" va "chatlok" uslublarini taqqoslang:</h2>
+      <p>Quyidagi ikki gapni taqqoslang. Qaysi biri adabiy? Nega?</p>
+      <ul>
+        <li>❌ “Brat, vapshe zor bo‘ldi bu narsa.”</li>
+        <li>✅ “Do‘stim, bu juda yaxshi chiqdi.”</li>
+      </ul>
+      <form onsubmit="handleSubmit(event)">
+        <textarea placeholder="Javobingizni yozing..."></textarea>
+        <button type="submit">Javobni yuborish</button>
+        <div class="feedback"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>3. O‘z gaplaringizni tuzing:</h2>
+      <p>Quyidagi mavzularda 3 ta toza, adabiy gap yozing:</p>
+      <ul>
+        <li>Do‘stlik haqida</li>
+        <li>Maktabdagi kuningiz haqida</li>
+        <li>Til va madaniyat haqida</li>
+      </ul>
+      <form onsubmit="handleSubmit(event)">
+        <textarea placeholder="Do‘stlik haqida gaplaringiz..."></textarea>
+        <textarea placeholder="Maktabdagi kuningiz haqida gaplaringiz..."></textarea>
+        <textarea placeholder="Til va madaniyat haqida gaplaringiz..."></textarea>
+        <button type="submit">Javoblarni yuborish</button>
+        <div class="feedback"></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="section">
+    &copy; 2025 Chatlok. Muallif: <strong>Basirov Tamir</strong>
+  </footer>
+
+</div>
+
+</body>
+</html>
